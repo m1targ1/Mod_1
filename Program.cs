@@ -12,6 +12,7 @@ namespace Mod_1
         {
             while (true)
             {
+                // Вывод пояснений для пользователя
                 Console.WriteLine("Модуль 1.");
                 Console.WriteLine("Выберите действие:");
                 Console.WriteLine("1. Преобразовать из Цельсия в Фаренгейт");
@@ -21,34 +22,32 @@ namespace Mod_1
                 Console.WriteLine("5. Есть ли введённый город в списке");
                 Console.WriteLine("6. Угадай число");
                 Console.WriteLine("7. Выйти");
+             
+                string choice = Console.ReadLine(); // Переменная для выбора
 
-                string choice = Console.ReadLine();
-
-                if (choice == "1")
+                if (choice == "1") // Если выбрана 1
                 {
                     Console.Clear();
                     Console.Write("Введите температуру в градусах Цельсия: ");
                     double cels = Convert.ToDouble(Console.ReadLine());
-                    double fahr = (cels * 9 / 5) + 32;
+                    double fahr = (cels * 9 / 5) + 32;  // Перевод градусов Цельсия в градусы Фаренгейта
                     Console.WriteLine($"Температура в Фаренгейтах: {fahr}°F");
                 }
-                else if (choice == "2")
+                else if (choice == "2") // Если выбрана 2
                 {
                     Console.Clear();
                     Console.Write("Введите температуру в градусах Фаренгейта: ");
                     double fahr = Convert.ToDouble(Console.ReadLine());
-                    double cels = (fahr - 32) * 5 / 9;
+                    double cels = (fahr - 32) * 5 / 9; // Перевод градусов Фаренгейта в градусы Цельсия
                     Console.WriteLine($"Температура в Цельсиях: {cels}°C");
                 }
-                else if (choice == "3")
+                else if (choice == "3") // Если выбрана 3
                 {
                     Console.Clear();
                     Console.Write("Введите целое число: ");
 
-                    // Считываем ввод пользователя и конвертируем его в целое число
-                    int num = Convert.ToInt32(Console.ReadLine());
-
-                    // Проверяем, является ли число четным или нечетным
+                    int num = Convert.ToInt32(Console.ReadLine()); // Ввод пользователем числа и конвертация в целое число
+                    // проверка, является число четным или нечетным
                     if (num % 2 == 0)
                     {
                         Console.WriteLine($"Число {num} является четным.");
@@ -58,22 +57,22 @@ namespace Mod_1
                         Console.WriteLine($"Число {num} является нечетным.");
                     }
                 }
-                else if (choice == "4")
+                else if (choice == "4") // Если выбрана 4
                 {
                     Console.Clear();
                     Console.Write("Введите строку: ");
                     string originalLine = Console.ReadLine();
 
-                    // Убираем пробелы и приводим строку к нижнему регистру для корректного сравнения
+                    // Убрать пробелы и привести строку к нижнему регистру для корректного сравнения
                     string processedLine = originalLine.Replace(" ", "").ToLower();
 
-                    // Инвертируем строку
-                    char[] символы = processedLine.ToCharArray();
-                    Array.Reverse(символы);
-                    string перевернутаяСтрока = new string(символы);
+                    // Инвертирование строку
+                    char[] symbol = processedLine.ToCharArray();
+                    Array.Reverse(symbol);
+                    string reverse_line = new string(symbol);
 
-                    // Сравниваем исходную обработанную строку с перевернутой
-                    if (processedLine == перевернутаяСтрока)
+                    // Сравнение исходной обработанной строки с перевернутой
+                    if (processedLine == reverse_line)
                     {
                         Console.WriteLine($"Строка \"{originalLine}\" является палиндромом.");
                     }
@@ -82,25 +81,27 @@ namespace Mod_1
                         Console.WriteLine($"Строка \"{originalLine}\" не является палиндромом.");
                     }
                 }
-                else if (choice == "5")
+                else if (choice == "5") // Если выбрана 5
                 {
                     Console.Clear();
-                    // Создаем массив с 5 названиями городов
+                    // Создание пустого массива на 5 элементов
                     string[] cities = new string[5];
-                    // Запрашиваем у пользователя ввод названий городов
+                    Console.WriteLine("Введите 5 городов.");
+                    // Ввод пользователем названий городов для заполнения массива
                     for (int i = 0; i < cities.Length; i++)
                     {
                         Console.Write($"Введите название города {i + 1}: ");
                         cities[i] = Console.ReadLine();
                     }
-                    // Запрашиваем у пользователя название города
-                    Console.Write("Введите название города: ");
+                    Console.WriteLine();
+                    // Запрос у пользователя названия города, который необъходимо найти
+                    Console.Write("Введите название города, который необходимо найти: ");
                     string int_city = Console.ReadLine();
 
-                    // Ищем индекс введенного города в массиве
+                    // Поиск индекса введенного города в массиве
                     int index = Array.IndexOf(cities, int_city);
 
-                    // Проверяем, найден ли город в массиве
+                    // Проверка, найден ли город в массиве
                     if (index != -1)
                     {
                         index = index + 1;
@@ -111,14 +112,14 @@ namespace Mod_1
                         Console.WriteLine($"Город {int_city} не найден в массиве.");
                     }
                 }
-                else if (choice == "6")
+                else if (choice == "6") // Если выбрана 6
                 {
                     Console.Clear();
                     // Генерация случайного числа от 1 до 10
                     Random random = new Random();
-                    int planned_num = random.Next(1, 11); // Next(1, 11) генерирует число от 1 до 10 включительно
+                    int planned_num = random.Next(1, 11); // Генерация число от 1 до 10 включительно
 
-                    // Запрашиваем у пользователя ввод числа
+                    // Запрос у пользователя ввести число
                     Console.Write("Угадайте число от 1 до 10: ");
                     int guessed_num = Convert.ToInt32(Console.ReadLine());
 
@@ -132,9 +133,9 @@ namespace Mod_1
                         Console.WriteLine($"К сожалению, вы не угадали. Загаданное число было: {planned_num}.");
                     }
                 }
-                else if (choice == "7")
+                else if (choice == "7") // Если выбрана 7
                 {
-                    break;
+                    break; // Выход из программы
                 }
                 else
                 {
