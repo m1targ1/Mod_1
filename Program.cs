@@ -60,7 +60,7 @@ namespace Mod_1
                             Console.Write("Введите целое число: ");
 
                             int num = Convert.ToInt32(Console.ReadLine()); // Ввод пользователем числа и конвертация в целое число
-                                                                           // проверка, является число четным или нечетным
+                            // проверка, является число четным или нечетным
                             if (num % 2 == 0)
                             {
                                 Console.WriteLine($"Число {num} является четным.");
@@ -209,7 +209,6 @@ namespace Mod_1
                             {
                                 mass[i] /= maxAbsValue;
                             }
-
                             // Вывод измененного массива
                             Console.WriteLine("Измененный массив:");
                             foreach (double value in mass)
@@ -360,29 +359,22 @@ namespace Mod_1
                             // Ввод значения K
                             Console.Write("Введите количество элементов в массиве (K): ");
                             int K = int.Parse(Console.ReadLine());
-
                             // Русский алфавит
                             char[] russianAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя".ToCharArray();
-
                             // Согласные буквы
                             char[] consonants = "бвгджзйклмнпрстфхцчшщ".ToCharArray();
-
                             // Создание символьного массива из K элементов
                             Random random = new Random();
                             char[] arr = new char[K];
-
                             // Заполнение массива случайными буквами из русского алфавита
                             for (int i = 0; i < K; i++)
                             {
                                 arr[i] = russianAlphabet[random.Next(russianAlphabet.Length)];
                             }
-
                             // Создание нового массива из согласных букв
                             char[] consonantArr = arr.Where(c => consonants.Contains(c)).ToArray();
-
                             // Вывод оригинального массива
                             Console.WriteLine("Оригинальный массив: [" + string.Join(", ", arr) + "]");
-
                             // Вывод массива с согласными буквами
                             Console.WriteLine("Массив согласных: [" + string.Join(", ", consonantArr) + "]");
                         }
@@ -400,10 +392,8 @@ namespace Mod_1
                             {
                                 arr[i] = random.NextDouble() * 20 - 10; // Генерация числа от -10 до 10
                             }
-
                             // Вывод исходного массива
                             Console.WriteLine("Исходный массив: [" + string.Join(", ", arr.Select(x => x.ToString("F2"))) + "]");
-
                             // Создание массива индексов в порядке возрастания значений элементов
                             int[] indices = arr
                                 .Select((value, index) => new { Value = value, Index = index }) // Сопоставление значений и индексов
@@ -605,7 +595,6 @@ namespace Mod_1
                 }
             }
         }
-
         // Метод для упорядочивания строк матрицы по возрастанию сумм
         public void SortRowsBySum()
         {
@@ -620,7 +609,6 @@ namespace Mod_1
                     rowSums[i] += matrix[i, j];
                 }
             }
-
             // Сортировки строки матрицы по возрастанию сумм
             for (int i = 0; i < size - 1; i++)
             {
@@ -644,7 +632,6 @@ namespace Mod_1
                 }
             }
         }
-
         // Метод для вывода матрицы
         public void PrintMatrix()
         {
