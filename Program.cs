@@ -34,7 +34,7 @@ namespace Mod_1
                         Console.WriteLine("4. Является ли строка палиндромом");
                         Console.WriteLine("5. Есть ли введённый город в списке");
                         Console.WriteLine("6. Угадай число");
-                        Console.WriteLine("7. Выйти");
+                        Console.WriteLine("7. Выход");
 
                         string choice = Console.ReadLine(); // Переменная для выбора
 
@@ -174,7 +174,7 @@ namespace Mod_1
                         Console.WriteLine("4. Поиск максимального и минимального элементов массива");
                         Console.WriteLine("5. Символьный массив из К элементов");
                         Console.WriteLine("6. Вещественный массив из 10-ти элементов");
-                        Console.WriteLine("7. Выйти");
+                        Console.WriteLine("7. Выход");
                         string choice2 = Console.ReadLine(); // Переменная для выбора
                         if (choice2 == "1") // Если выбрана 1
                         {
@@ -389,6 +389,8 @@ namespace Mod_1
                         else if (choice2 == "6") // Если выбрана 6
                         {
                             Console.Clear();
+                            Console.WriteLine("Пояснение:\nПрограмма создаёт массив из 10 рандомных вещественных чисел.\nПосле выводит индексы элементов в порядке возврастания этих элементов.");
+                            Console.WriteLine();
                             // Определение массива вещественных чисел
                             double[] arr = new double[10];
                             Random random = new Random();
@@ -436,7 +438,7 @@ namespace Mod_1
                         Console.WriteLine("1. Сокращение дроби");
                         Console.WriteLine("2. Массив с минимальным количеством элементов, сумма которых не превышает заданного пользователем числа");
                         Console.WriteLine("3. Квадратная целочисленная матрица с упорядоченными строками по возрастанию сумм элементов в них.");
-                        Console.WriteLine("4. Выйти");
+                        Console.WriteLine("4. Выход");
                         string choice3 = Console.ReadLine(); // Переменная для выбора
                         if (choice3 == "1") // Если выбрана 1
                         {
