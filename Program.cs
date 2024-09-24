@@ -351,7 +351,6 @@ namespace Mod_1
                                 Console.Write(arr[i] + " ");
                             }
                             Console.WriteLine();
-                            Console.ReadKey();
                         }
                         else if (choice2 == "5") // Если выбрана 5
                         {
@@ -389,6 +388,7 @@ namespace Mod_1
                         }
                         else if (choice2 == "6") // Если выбрана 6
                         {
+                            Console.Clear();
                             // Определение массива вещественных чисел
                             double[] arr = new double[10];
                             Random random = new Random();
